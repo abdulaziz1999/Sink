@@ -5,6 +5,11 @@ export default eventHandler((event) => {
       status: 401,
       statusText: 'Unauthorized',
     })
+    console.log("=== DEBUG CLOUDFLARE ENV ===")
+    console.log("Token yang kamu ketik di browser:", getHeader(event, 'authorization'))
+    console.log("Token yang dibaca Nuxt Config (siteToken):", config.siteToken)
+    console.log("Token langsung dari process.env:", process.env.NUXT_SITE_TOKEN)
+    console.log("=============================")
   }
   if (token && token.length < 8) {
     throw createError({
