@@ -5,6 +5,11 @@ export default eventHandler((event) => {
 
     // 2. Jalankan log TERLEBIH DAHULU agar tercatat di Cloudflare
     console.log("=== DEBUG CLOUDFLARE ENV ===")
+    console.log('token:', JSON.stringify(token))
+    console.log('siteToken:', JSON.stringify(config.siteToken))
+    console.log('match:', token === config.siteToken)
+    console.log('token length:', token?.length)
+    console.log('siteToken length:', config.siteToken?.length)
     console.log("Token yang kamu ketik di browser (token):", token)
     console.log("Token asli dari Header:", getHeader(event, 'authorization'))
     console.log("Token yang dibaca Nuxt Config (siteToken):", config.siteToken)
