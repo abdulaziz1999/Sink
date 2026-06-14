@@ -9,7 +9,10 @@ export default eventHandler((event) => {
     console.log("Token asli dari Header:", getHeader(event, 'authorization'))
     console.log("Token yang dibaca Nuxt Config (siteToken):", config.siteToken)
     console.log("Token langsung dari process.env:", process.env.NUXT_SITE_TOKEN)
-    console.log("dd", config.public.siteToken)
+    console.log('All ENV Keys:', Object.keys(process.env))
+    console.log('cl ',event.context.cloudflare
+      ? Object.keys(event.context.cloudflare.env || {})
+      : null)
     console.log("=============================")
     throw createError({
       status: 401,
