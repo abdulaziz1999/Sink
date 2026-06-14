@@ -9,6 +9,7 @@ export default eventHandler((event) => {
     console.log("Token asli dari Header:", getHeader(event, 'authorization'))
     console.log("Token yang dibaca Nuxt Config (siteToken):", config.siteToken)
     console.log("Token langsung dari process.env:", process.env.NUXT_SITE_TOKEN)
+    console.log("dd", config.public.siteToken)
     console.log("=============================")
     throw createError({
       status: 401,
