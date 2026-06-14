@@ -5,6 +5,19 @@ export default eventHandler((event) => {
 
     // 2. Jalankan log TERLEBIH DAHULU agar tercatat di Cloudflare
     console.log("=== DEBUG CLOUDFLARE ENV ===")
+    console.log(Buffer.from(token))
+    console.log(Buffer.from(config.siteToken))
+
+    console.log(
+  'token bytes',
+  Array.from(token).map(c => c.charCodeAt(0))
+)
+
+console.log(
+  'siteToken bytes',
+  Array.from(config.siteToken).map(c => c.charCodeAt(0))
+)
+    console.log("=============================")
     console.log('token:', JSON.stringify(token))
     console.log('siteToken:', JSON.stringify(config.siteToken))
     console.log('match:', token === config.siteToken)
