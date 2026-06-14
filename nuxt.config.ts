@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
   runtimeConfig: {
-    siteToken: '',//process.env.NUXT_SITE_TOKEN || crypto.randomUUID(),
+    siteToken: process.env.NUXT_SITE_TOKEN || crypto.randomUUID(),
     redirectStatusCode: '301',
     linkCacheTtl: 60,
     redirectWithQuery: false,
